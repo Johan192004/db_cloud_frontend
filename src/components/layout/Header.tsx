@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
 import Button from '../common/Button';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -55,10 +57,10 @@ const Header: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={() => navigate('/login')}>
               Sign In
             </Button>
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" onClick={() => navigate('/register')}>
               Get Started
             </Button>
           </div>
@@ -121,10 +123,10 @@ const Header: React.FC = () => {
               How It Works
             </button>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => navigate('/login')}>
                 Sign In
               </Button>
-              <Button variant="primary" size="sm">
+              <Button variant="primary" size="sm" onClick={() => navigate('/register')}>
                 Get Started
               </Button>
             </div>

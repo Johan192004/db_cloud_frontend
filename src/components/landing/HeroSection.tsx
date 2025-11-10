@@ -1,8 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
 import Button from '../common/Button';
 
 const HeroSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className="gradient-bg min-h-screen flex items-center pt-20">
       <Container>
@@ -28,13 +37,14 @@ const HeroSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" onClick={() => navigate('/register')}>
                 Get Started Free
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="bg-white/10 border-white text-white hover:bg-white/20"
+                onClick={() => scrollToSection('how-it-works')}
               >
                 View Demo
               </Button>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '../common/Container';
 import Button from '../common/Button';
 
 const CTASection: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 gradient-bg">
       <Container>
@@ -20,6 +22,7 @@ const CTASection: React.FC = () => {
               variant="secondary" 
               size="lg"
               className="bg-white text-primary-700 hover:bg-gray-100"
+              onClick={() => navigate('/register')}
             >
               Get Started Free
             </Button>
@@ -27,6 +30,7 @@ const CTASection: React.FC = () => {
               variant="outline" 
               size="lg"
               className="bg-white/10 border-white text-white hover:bg-white/20"
+              onClick={() => navigate('/login')}
             >
               Contact Sales
             </Button>

@@ -20,20 +20,21 @@
 
 ## 🚧 Próximas Fases
 
-### Fase 2: Autenticación (Próximo Commit)
-- [ ] Página de Login
-  - [ ] Formulario con validación
-  - [ ] Integración con `/auth/login`
-  - [ ] Manejo de errores
-  - [ ] Almacenamiento de token JWT
-- [ ] Página de Register
-  - [ ] Formulario con validación
-  - [ ] Tipos de usuario (Individual / Organization)
-  - [ ] Integración con `/auth/register`
-  - [ ] Manejo de errores
-- [ ] Context API para autenticación
-- [ ] Protected routes
-- [ ] Redirect logic
+### Fase 2: Autenticación ✅ COMPLETED
+- [x] Página de Login
+  - [x] Formulario con validación
+  - [x] Integración con `/auth/login`
+  - [x] Manejo de errores
+  - [x] Almacenamiento de token JWT
+- [x] Página de Register
+  - [x] Formulario con validación
+  - [x] Tipos de usuario (Individual / Organization)
+  - [x] Integración con `/auth/register`
+  - [x] Manejo de errores
+- [x] Context API para autenticación
+- [x] Protected routes
+- [x] Redirect logic
+- [x] React Router configuration
 
 ### Fase 3: Dashboard (Commit Posterior)
 - [ ] Layout del Dashboard
