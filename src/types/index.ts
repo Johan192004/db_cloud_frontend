@@ -38,7 +38,7 @@ export interface RegisterRequest {
   username: string;
   email: string;
   password: string;
-  role: 'INDIVIDUAL' | 'ORGANIZATION';
+  userType: 'INDIVIDUAL' | 'ORGANIZATION';
 }
 
 export interface AuthResponse {

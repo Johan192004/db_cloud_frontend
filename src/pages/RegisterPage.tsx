@@ -14,7 +14,7 @@ const RegisterPage: React.FC = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    role: 'INDIVIDUAL' as 'INDIVIDUAL' | 'ORGANIZATION',
+    userType: 'INDIVIDUAL' as 'INDIVIDUAL' | 'ORGANIZATION',
   });
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -31,8 +31,8 @@ const RegisterPage: React.FC = () => {
     setApiError('');
   };
 
-  const handleRoleChange = (role: 'INDIVIDUAL' | 'ORGANIZATION') => {
-    setFormData(prev => ({ ...prev, role }));
+  const handleRoleChange = (userType: 'INDIVIDUAL' | 'ORGANIZATION') => {
+    setFormData(prev => ({ ...prev, userType }));
   };
 
   const validate = (): boolean => {
@@ -78,7 +78,7 @@ const RegisterPage: React.FC = () => {
         username: formData.username,
         email: formData.email,
         password: formData.password,
-        role: formData.role,
+        userType: formData.userType,
       });
       navigate('/dashboard'); // Redirigir al dashboard después del registro
     } catch (error: any) {
@@ -132,7 +132,7 @@ const RegisterPage: React.FC = () => {
                     onClick={() => handleRoleChange('INDIVIDUAL')}
                     className={`
                       p-4 rounded-lg border-2 transition-all
-                      ${formData.role === 'INDIVIDUAL'
+                      ${formData.userType === 'INDIVIDUAL'
                         ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                         : 'border-gray-300 dark:border-gray-600 hover:border-primary-300'
                       }
@@ -150,7 +150,7 @@ const RegisterPage: React.FC = () => {
                     onClick={() => handleRoleChange('ORGANIZATION')}
                     className={`
                       p-4 rounded-lg border-2 transition-all
-                      ${formData.role === 'ORGANIZATION'
+                      ${formData.userType === 'ORGANIZATION'
                         ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
                         : 'border-gray-300 dark:border-gray-600 hover:border-primary-300'
                       }
